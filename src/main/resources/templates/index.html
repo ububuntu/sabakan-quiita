@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="jp" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ようこそ Mirai へ</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script th:src="@{/js/script.js}"></script>
 </head>
-<body>
+<header>
+    <!-- ヘッダー呼び出し -->
+    <div th:replace="common/header :: siteHeader"></div>
+</header>
 
+<body>
+    <main>
+        <section class="goal" aria-label="目標セクション">
+            <q>あなたの目標</q>
+            <div class="company" th:text="${goal_target}">株式会社〇〇〇〇〇 最終面接</div>
+            <div class="countdown" th:text="'目標まであと ' + ${goal_remaining} + ' 日'">目標まであと〇日</div>
+        </section>
+
+        <section class="menu" aria-label="メニュー">
+            <q>メニュー</q>
+
+            <article class="menu-item">
+                <div class="icon" aria-hidden="true">面接アイコン</div>
+                <div class="texts">
+                    <p class="title">面接練習</p>
+                    <p class="desc">WEB面接を試してみよう！</p>
+                </div>
+                <button class="link" onclick="location.href='#interview'">開く</button>
+            </article>
+
+            <article class="menu-item">
+                <div class="icon" aria-hidden="true">過去問アイコン</div>
+                <div class="texts">
+                    <p class="title">過去問稽古場</p>
+                    <p class="desc">SPI・CAB/GABの勉強をしよう！</p>
+                </div>
+                <button class="link" onclick="location.href='#past-qa'">開く</button>
+            </article>
+
+            <article class="menu-item">
+                <div class="icon" aria-hidden="true">ESアイコン</div>
+                <div class="texts">
+                    <p class="title">エントリーシート</p>
+                    <p class="desc">ES添削とテンプレートを活用してみよう！</p>
+                </div>
+                <button class="link" onclick="location.href='#es'">開く</button>
+            </article>
+
+            <article class="menu-item" th:if="${isAdmin}">
+                <div class="icon" aria-hidden="true">管理者アイコン</div>
+                <div class="texts">
+                    <p class="title">管理者画面</p>
+                    <p class="desc">ユーザを管理しよう！</p>
+                </div>
+                <button class="link" onclick="location.href='#admin'">開く</button>
+            </article>
+        </section>
+
+        <div class="spacer" aria-hidden="true"></div>
+    </main>
 </body>
+
+<footer>
+    <!-- フッター呼び出し -->
+    <div th:replace="common/footer :: siteFooter"></div>
+</footer>
 </html>

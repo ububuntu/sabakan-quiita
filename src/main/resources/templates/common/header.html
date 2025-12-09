@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>header</title>
 </head>
 <body>
-
+    <header th:fragment="siteHeader">
+        <div class="title">ホーム</div>
+        <div class="user">ようこそ — <span th:text="${userName}">ユーザ名</span> さん</div>
+    </header>
 </body>
 </html>

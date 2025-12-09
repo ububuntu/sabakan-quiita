@@ -1,0 +1,147 @@
+:root {
+    --primary: #2b73ff;
+    --bg: #f7f8fb;
+    --text: #1f2a37;
+    --muted: #6b7280;
+    --card: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ヘッダー */
+header {
+    background: var(--card);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* メイン */
+main {
+    padding: 12px;
+}
+
+/* 目標セクション */
+.goal {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.goal q {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.goal .company {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.goal .countdown {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* メニュー */
+.menu q {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-item {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.menu-item .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.menu-item .texts {
+    flex: 1;
+}
+
+.menu-item .title {
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+.menu-item .desc {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.menu-item .link {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* フッター */
+footer {
+    background: var(--card);
+    border-top: 1px solid #e5e7eb;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* スペーサー（フッター分の余白） */
+.spacer {
+    height: 60px;
+}
+
+/* レスポンシブ調整（タブレット以上） */
+@media (min-width: 600px) {
+    main {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}

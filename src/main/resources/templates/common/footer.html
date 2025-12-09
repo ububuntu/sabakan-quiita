@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+    <footer th:fragment="siteFooter">
+        <nav class="bottom">
+            <a href="/interview">面接</a>
+            <a href="/past">過去問</a>
+            <a href="/home">ホーム</a>
+            <a href="/es">ES</a>
+            <a href="/user">ユーザ</a>
+        </nav>
+    </footer>
 </body>
 </html>
