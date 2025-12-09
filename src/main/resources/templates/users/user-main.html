@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ユーザページ | Mirai</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
-<body>
 
+<header>
+    <!-- ヘッダー呼び出し -->
+    <div th:replace="common/header :: siteHeader"></div>
+</header>
+
+<body>
+    <main class="user-container">
+        <h1>ユーザページ</h1>
+        <p class="username" th:text="${userName}">たまーにラッキー✎</p>
+
+        <section class="goal-section">
+            <h2>現在の目標 <a th:href="@{/goal/edit}">編集</a></h2>
+            <div class="goal-company" th:text="${goalTarget}">株式会社〇〇〇〇 最終面接</div>
+            <div class="goal-deadline">
+                <span th:text="${goalDate}">2025年XX月XX日まで</span>
+                <span th:text="'あと ' + ${goalRemaining} + ' 日'">あとXX日</span>
+            </div>
+            <div class="goal-progress" th:text="${goalPercent} + '%'">XX%</div>
+        </section>
+
+        <section class="settings">
+            <h2>設定</h2>
+            <div class="setting-item">
+                <span>テーマカラー変更</span>
+                <span th:text="${themeColor}">ブルー</span>
+            </div>
+            <div class="setting-item">
+                <a th:href="@{/password}">パスワード変更</a>
+            </div>
+            <div class="setting-item">
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit">ログアウト</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
 </body>
+
+<footer class="auth-footer">
+    <!-- フッター呼び出し -->
+    <div th:replace="common/footer :: siteFooter"></div>
+    Mirai by ぎじゅつりょくがすごい人たち
+</footer>
 </html>
