@@ -1,5 +1,6 @@
 package jp.sabakan.mirai.repository
 
+import jp.sabakan.mirai.data.UserData
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
@@ -18,18 +19,14 @@ class UserRepository {
     // ユーザー情報をメールアドレスで取得するSQLクエリ
     val getUserOne = "SELECT * FROM user_m WHERE user_address = :userAddress"
 
-    /**
-     * ユーザ情報をメールアドレスで取得するメソッド
-     *
-     * @param userAddress ユーザのメールアドレス
-     * @return ユーザ情報のリスト
-     */
-    fun getUserOne(userAddress: String): List<Map<String, Any?>> {
-        // SQLクエリのパラメータを設定
-        val param = mapOf("userAddress" to userAddress)
+    fun getUserLogin(data: UserData): List<Map<String, Any?>> {
+        // パラメータマップの作成
+        val paramMap = mapOf<String, Any?>(
+            "userAddress" to data.userAddress
+        )
 
-        // クエリを実行してユーザ情報を取得
-        return njdbc.queryForList(getUserOne, param)
+        // クエリの実行
+        return njdbc.queryForList(getUserOne, paramMap)
     }
 
 }
