@@ -132,6 +132,9 @@ main {
 
 /* フッター */
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: var(--card);
     border-top: 0.1rem solid #e5e7eb;
     padding: 2%;
@@ -142,6 +145,27 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+footer nav.bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+footer nav.bottom a.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #3D3D3D; /* 非選択時のグレー */
+}
+
+footer .icon:visited {
+    color: #3D3D3D; /* 訪問時も色を変えない */
 }
 
 /* スペーサー（フッター分の余白） */
