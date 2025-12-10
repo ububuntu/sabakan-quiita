@@ -7,8 +7,8 @@ CREATE TABLE user_m(
     user_role       VARCHAR(5) NOT NULL ,
     user_valid      BOOLEAN NOT NULL ,
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
-    lasted_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-)
+    lasted_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 /* 面接テーブル */
 CREATE TABLE interview_t(
@@ -19,8 +19,8 @@ CREATE TABLE interview_t(
     interview_voice   INT,
     interview_date    DATE,
     interview_score   INT,
-    FOREIGN KEY (user_id) REFERENCES user_m(user_id),
-)
+    FOREIGN KEY (user_id) REFERENCES user_m(user_id)
+);
 
 /* ESテーブル */
 CREATE TABLE es_t(
@@ -32,8 +32,8 @@ CREATE TABLE es_t(
     es_content_stwe         VARCHAR(500),
     es_occupation           VARCHAR(100),
     es_date                 DATE,
-    FOREIGN KEY (user_id) REFERENCES user_m(user_id),
-)
+    FOREIGN KEY (user_id) REFERENCES user_m(user_id)
+);
 
 /* ESテンプレテーブル */
 CREATE TABLE es_template_t(
@@ -42,8 +42,8 @@ CREATE TABLE es_template_t(
     es_template_content_selfpr      VARCHAR(500),
     es_template_content_activities  VARCHAR(500),
     es_template_content_stwe        VARCHAR(500),
-    es_template_occupation          VARCHAR(100),
-)
+    es_template_occupation          VARCHAR(100)
+);
 
 /* SPIテーブル */
 CREATE TABLE spi_t(
@@ -54,8 +54,8 @@ CREATE TABLE spi_t(
     spi_answer3         VARCHAR(100),
     spi_answer4         VARCHAR(100),
     spi_correct_answer  INT,
-    spi_category        VARCHAR(50),
-)
+    spi_category        VARCHAR(50)
+);
 
 /* SPI結果テーブル */
 CREATE TABLE spi_result_t(
@@ -66,8 +66,8 @@ CREATE TABLE spi_result_t(
     spi_is_correct              BOOLEAN,
     spi_answered_at             TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
     FOREIGN KEY (user_id) REFERENCES user_m(user_id),
-    FOREIGN KEY (spi_id) REFERENCES spi_t(spi_id),
-)
+    FOREIGN KEY (spi_id) REFERENCES spi_t(spi_id)
+);
 
 /* CAB/GABテーブル */
 CREATE TABLE cabgab_t(
@@ -78,8 +78,8 @@ CREATE TABLE cabgab_t(
     cabgab_answer3          VARCHAR(100),
     cabgab_answer4          VARCHAR(100),
     cabgab_correct_answer   INT,
-    cabgab_category         VARCHAR(50),
-)
+    cabgab_category         VARCHAR(50)
+);
 
 /* CAB/GAB結果テーブル */
 CREATE TABLE cabgab_result_t(
@@ -90,5 +90,5 @@ CREATE TABLE cabgab_result_t(
     cabgab_is_correct           BOOLEAN,
     cabgab_answered_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
     FOREIGN KEY (user_id) REFERENCES user_m(user_id),
-    FOREIGN KEY (cabgab_id) REFERENCES cabgab_t(cabgab_id),
-)
+    FOREIGN KEY (cabgab_id) REFERENCES cabgab_t(cabgab_id)
+);
