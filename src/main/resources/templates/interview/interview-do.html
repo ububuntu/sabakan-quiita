@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="jp" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web面接練習</title>
+    <title>Web面接練習 | Mirai</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script th:src="@{/js/interview.js}"></script>
 </head>
+<header>
+    <!-- ヘッダー呼び出し -->
+    <div th:replace="common/header :: siteHeader"></div>
+</header>
 <body>
 <div class="container">
-    <!-- ヘッダー -->
-    <header id="header-placeholder"></header>
-
     <!-- メインコンテンツ -->
     <main class="main-content">
         <!-- カメラプレビュー -->
@@ -23,6 +25,7 @@
                         <path d="M17 10L22 7V17L17 14V10Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
                     </svg>
                 </div>
+                <p class="camera-text">カメラプレビュー</p>
             </div>
         </div>
 
@@ -50,11 +53,11 @@
             面接停止
         </button>
     </main>
-
-    <!-- フッター -->
-    <footer id="footer-placeholder"></footer>
 </div>
-    <!-- カメラ機能をjavascriptで実装予定 -->
-<!--<script src="script.js"></script>-->
 </body>
+<footer>
+    <!-- フッター呼び出し -->
+    <div th:replace="common/footer :: siteFooter"></div>
+    Mirai by ぎじゅつりょくがすごい人たち
+</footer>
 </html>

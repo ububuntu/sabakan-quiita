@@ -12,6 +12,11 @@ class InterviewController {
         return "/interview/interview-main"
     }
 
+    @GetMapping("/interview-do")
+    fun getInterview(): String {
+        return "/interview/interview-do"
+    }
+
     @PostMapping("/interview-main")
     fun postIndex(): String {
         return "/interview/interview-main"
