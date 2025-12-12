@@ -4,9 +4,12 @@
     --text: #1f2a37;
     --muted: #6b7280;
     --card: #ffffff;
-
     /* 基準フォントサイズ */
     font-size: 16px;
+    /* アイコン共通サイズ */
+    --icon-size: 8%;
+    /* footerアイコンサイズ */
+    --footer-icon-size: 4rem;
 }
 
 html, body {
@@ -16,7 +19,7 @@ html, body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", Meiryo, sans-serif;
     background: var(--bg);
     color: var(--text);
-    font-size: 1rem; /* 16px相当 */
+    font-size: 1rem;
 }
 
 /* ヘッダー */
@@ -48,7 +51,7 @@ main {
 .menu {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem; /* テストの際に.menu縦の隙間が崩れるようなら変更をかける必要がある */
+    gap: 1.2rem;
 }
 
 .menu-item {
@@ -70,28 +73,13 @@ main {
     text-decoration: none;
 }
 
-.menu-item .img{
-    width: 8%;
+.menu-item .img {
+    width: var(--icon-size);
     height: auto;
     aspect-ratio: 1/1;
     border-radius: 0.5rem;
     display: flex;
 }
-
-/*TODO ユーザーログイン等のcssが適応されているためそこらへんを訂正する必要がある*/
-/*.menu-item .icon {*/
-/*    width: 12%;*/
-/*    height: auto;*/
-/*    aspect-ratio: 1 / 1; !* 正方形を維持 *!*/
-/*    border-radius: 0.5rem;*/
-/*    background: #eef2ff;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    color: var(--primary);*/
-/*    font-size: 0.8rem;*/
-/*    font-weight: 700;*/
-/*}*/
 
 .menu-item .texts {
     flex: 1;
@@ -130,19 +118,13 @@ main {
 
 /* フッター */
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: var(--card);
     border-top: 0.1rem solid #e5e7eb;
-    padding: 2%;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--muted);
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    padding: 0;
 }
 
 footer nav.bottom {
@@ -150,23 +132,41 @@ footer nav.bottom {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    padding: 2% 0;
 }
 
-footer nav.bottom a.icon {
+.footer-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: #3D3D3D; /* 非選択時のグレー */
+    color: var(--muted);
 }
 
-footer .icon:visited {
-    color: #3D3D3D; /* 訪問時も色を変えない */
+.footer-icon:visited,
+.footer-icon:hover,
+.footer-icon:active,
+.footer-icon:focus {
+    color: var(--muted);
+    text-decoration: none;
 }
 
-/* スペーサー（フッター分の余白） */
+.footer-icon img {
+    width: var(--footer-icon-size);
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.footer-text {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* スペーサー(フッター分の余白) */
 .spacer {
     height: 12vh;
 }
