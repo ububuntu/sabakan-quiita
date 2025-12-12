@@ -8,17 +8,32 @@ import org.springframework.web.bind.annotation.PostMapping
 class InterviewController {
 
     @GetMapping("/interview-main")
-    fun getIndex(): String {
+    fun getInterview(): String {
         return "/interview/interview-main"
     }
 
     @GetMapping("/interview-do")
-    fun getInterview(): String {
+    fun getInterview_do(): String {
         return "/interview/interview-do"
     }
 
+    @GetMapping("/interview-log")
+    fun getInterview_log(): String {
+        return "/interview/interview-log"
+    }
+
     @PostMapping("/interview-main")
-    fun postIndex(): String {
+    fun postInterview(): String {
         return "/interview/interview-main"
+    }
+
+    @PostMapping("/interview-do")
+    fun postInterview_do(): String {
+        return "/interview/interview-do"
+    }
+
+    @PostMapping("/interview-log")
+    fun postInterview_log(): String {
+        return "/interview/interview-log"
     }
 }
