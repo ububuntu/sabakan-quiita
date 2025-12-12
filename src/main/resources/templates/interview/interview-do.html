@@ -7,14 +7,15 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <script th:src="@{/js/interview.js}"></script>
 </head>
+
 <header>
     <!-- ヘッダー呼び出し -->
     <div th:replace="common/header :: siteHeader"></div>
 </header>
+
 <body>
-<div class="container">
-    <!-- メインコンテンツ -->
-    <main class="main-content">
+<main>
+    <section class="interview-content" aria-label="面接練習">
         <!-- カメラプレビュー -->
         <div class="camera-preview">
             <video id="camera-video" autoplay playsinline></video>
@@ -52,9 +53,11 @@
             </svg>
             面接停止
         </button>
-    </main>
-</div>
+    </section>
+    <div class="spacer" aria-hidden="true"></div>
+</main>
 </body>
+
 <footer>
     <!-- フッター呼び出し -->
     <div th:replace="common/footer :: siteFooter"></div>
