@@ -37,19 +37,9 @@ CREATE TABLE es_t(
     FOREIGN KEY (user_id) REFERENCES user_m(user_id)
 );
 
-/* ESテンプレテーブル */
-CREATE TABLE es_template_t(
-    es_template_id                  CHAR(20) PRIMARY KEY NOT NULL UNIQUE ,
-    es_template_content_reason      VARCHAR(500),
-    es_template_content_selfpr      VARCHAR(500),
-    es_template_content_activities  VARCHAR(500),
-    es_template_content_stwe        VARCHAR(500),
-    es_template_occupation          VARCHAR(100)
-);
-
 /* SPIテーブル */
 CREATE TABLE spi_t(
-    spi_id              CHAR(20) PRIMARY KEY NOT NULL UNIQUE ,
+    spi_id              BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
     spi_content         VARCHAR(255),
     spi_answer1         VARCHAR(100),
     spi_answer2         VARCHAR(100),
@@ -59,38 +49,39 @@ CREATE TABLE spi_t(
     spi_category        VARCHAR(50)
 );
 
-/* SPI結果テーブル */
-CREATE TABLE spi_result_t(
-    spi_result_id               CHAR(20) PRIMARY KEY NOT NULL UNIQUE ,
-    user_id                     CHAR(20) NOT NULL ,
-    spi_id                      CHAR(20) NOT NULL ,
-    spi_user_answer             INT,
-    spi_is_correct              BOOLEAN,
-    spi_answered_at             TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
-    FOREIGN KEY (user_id) REFERENCES user_m(user_id),
-    FOREIGN KEY (spi_id) REFERENCES spi_t(spi_id)
-);
+
 
 /* CAB/GABテーブル */
 CREATE TABLE cabgab_t(
-    cabgab_id               CHAR(20) PRIMARY KEY NOT NULL UNIQUE ,
+    cabgab_id               BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
     cabgab_content          VARCHAR(255),
     cabgab_answer1          VARCHAR(100),
     cabgab_answer2          VARCHAR(100),
     cabgab_answer3          VARCHAR(100),
     cabgab_answer4          VARCHAR(100),
-    cabgab_correct_answer   INT,
+    cabgab_correct_answer   CHAR(1) DEFAULT NULL ,
     cabgab_category         VARCHAR(50)
 );
 
-/* CAB/GAB結果テーブル */
-CREATE TABLE cabgab_result_t(
-    cabgab_result_id            CHAR(20) PRIMARY KEY NOT NULL UNIQUE ,
-    user_id                     CHAR(20) NOT NULL ,
-    cabgab_id                   CHAR(20) NOT NULL ,
-    cabgab_user_answer          INT,
-    cabgab_is_correct           BOOLEAN,
-    cabgab_answered_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+/* 回答テーブル */
+CREATE TABLE cabgab_answer_t(
+    cabgab_answer_id    BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
+    user_id             CHAR(20) NOT NULL ,
+    cabgab_id          BIGINT NOT NULL ,
+    cabgab_user_answer         CHAR(1) DEFAULT NULL ,
+    is_correct         BOOLEAN DEFAULT NULL ,
+    answer_date        TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
     FOREIGN KEY (user_id) REFERENCES user_m(user_id),
     FOREIGN KEY (cabgab_id) REFERENCES cabgab_t(cabgab_id)
+);
+
+/* 正答率テーブル */
+CREATE TABLE cabgab_rate_t(
+    cabgab_rate_id     BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
+    user_id            CHAR(20) NOT NULL ,
+    cabgab_id         BIGINT NOT NULL ,
+    cabgab_answers      CHAR(3) DEFAULT NULL,
+    total_count        INT DEFAULT 0 ,
+    lasted_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+    FOREIGN KEY (user_id) REFERENCES user_m(user_id)
 );

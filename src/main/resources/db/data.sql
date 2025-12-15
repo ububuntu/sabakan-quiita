@@ -19,13 +19,6 @@ INSERT INTO es_t (
     'E001', 'U001', '志望動機の例', '自己PRの例', '学生時代の活動例', 'ストレス耐性の例', 'エンジニア', CURRENT_DATE
 );
 
--- ESテンプレテーブル
-INSERT INTO es_template_t (
-    es_template_id, es_template_content_reason, es_template_content_selfpr, es_template_content_activities, es_template_content_stwe, es_template_occupation
-) VALUES (
-    'T001', 'テンプレ志望動機', 'テンプレ自己PR', 'テンプレ活動', 'テンプレストレス耐性', '営業職'
-);
-
 -- SPIテーブル
 INSERT INTO spi_t (
     spi_id, spi_content, spi_answer1, spi_answer2, spi_answer3, spi_answer4, spi_correct_answer, spi_category
