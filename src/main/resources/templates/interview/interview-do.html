@@ -6,10 +6,8 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <script th:src="@{/js/script.js}"></script>
 </head>
-
-<header th:replace="common/header :: siteHeader"></header>
-
 <body>
+<header th:replace="common/header :: siteHeader"></header>
 <main>
     <section class="menu" aria-label="カメラ表示">
         <!-- カメラ表示領域 -->
@@ -34,11 +32,6 @@
         </button>
     </section>
 </main>
+<footer th:replace="common/footer :: siteFooter"></footer>
 </body>
-
-<footer>
-    <!-- フッター呼び出し -->
-    <div th:replace="common/footer :: siteFooter"></div>
-    Mirai by ぎじゅつりょくがすごい人たち
-</footer>
 </html>
