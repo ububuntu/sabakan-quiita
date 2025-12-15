@@ -27,6 +27,11 @@ import org.springframework.web.bind.annotation.PostMapping
             return "questions/cabgab-main"
         }
 
+        @GetMapping("/cabgab-do")
+        fun getQuestion_cubgab_do(): String{
+            return "questions/cabgab-do"
+        }
+
         @PostMapping("/questions-main")
         fun postIndex(): String{
             return "questions/questions-main"
@@ -46,4 +51,10 @@ import org.springframework.web.bind.annotation.PostMapping
         fun postQuestion_cabgab_main(): String{
             return "questions/cabgab-main"
         }
+
+        @PostMapping("/cabgab-do")
+        fun postQuestion_cabgab_do(): String{
+            return "questions/cabgab-do"
+        }
+
     }
