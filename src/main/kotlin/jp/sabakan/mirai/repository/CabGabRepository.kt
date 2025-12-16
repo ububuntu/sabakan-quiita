@@ -39,6 +39,12 @@ class CabGabRepository {
         ORDER BY cabgab_answer_at DESC LIMIT 3
     """.trimIndent()
 
+    // 回答率テーブルに新規登録するSQLクエリ
+    val insertCabGabAnswerRate = """
+        INSERT INTO cabgab_rate_t (cabgab_id, user_id, cabgab_answers, cabgab_count)
+        VALUES (:cabgabId, :userId, :cabgabAnswers, :cabgabCount)
+    """.trimIndent()
+
     /**
      * 指定カテゴリーのCabGab質問を取得する
      *
@@ -101,7 +107,7 @@ class CabGabRepository {
      * @param data 回答データ
      * @return 回答履歴文字列
      */
-    private fun createAnswer(data: AnsweredCabGabData): String {
+     fun createAnswer(data: AnsweredCabGabData): String {
         // パラメータマップの作成
         val paramMap = mapOf<String, Any?>(
             "cabgabId" to data.cabGabId,
@@ -128,5 +134,25 @@ class CabGabRepository {
         // 新しい順に連結して返す
         val newHistory = listOf(correctResult) + history
         return newHistory.take(3).joinToString("")
+    }
+
+    /**
+     * CabGabの回答率を新規登録する
+     *
+     * @param data 回答データ
+     * @return 更新件数
+     */
+    fun insertCabGabAnswerRate(data: AnsweredCabGabData): Int {
+        // パラメータマップの作成
+        val temp = createAnswer(data)
+        val paramMap = mapOf<String, Any?>(
+            "cabgabId" to data.cabGabId ,
+            "userId" to data.userId ,
+            "cabgabAnswers" to temp ,
+            "cabgabCount" to temp.count{ it == 'T' }
+        )
+
+        // クエリの実行
+        return jdbc.update(insertCabGabAnswerRate, paramMap)
     }
 }
