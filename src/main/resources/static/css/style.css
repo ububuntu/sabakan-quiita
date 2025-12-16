@@ -102,6 +102,7 @@ main {
     justify-content: center;
     gap: var(--gap-item);
     font-size: var(--font-xl);
+    font-weight: bold;
     text-decoration: none;
     color: inherit;
 }
