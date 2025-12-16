@@ -7,64 +7,56 @@
     <script th:src="@{/js/script.js}"></script>
 </head>
 
-<header>
-    <!-- ヘッダー呼び出し -->
-    <div th:replace="common/header :: siteHeader"></div>
-</header>
-
 <body>
-<main>
-    <section class="menu" aria-label="SPI問題">
-        <progress class="progress" max="100" value="70"></progress>
+<header th:replace="common/header :: siteHeader"></header>
+    <main>
+        <section class="menu" aria-label="SPI問題">
+            <progress class="progress" max="100" value="70"></progress>
 
-        <!-- 質問内容 -->
-        <label class="menu-item">
-            <div class="texts">
-                <p class="title">質問内容</p>
-            </div>
-        </label>
+            <!-- 質問内容 -->
+            <label class="menu-item">
+                <div class="texts">
+                    <p class="title">質問内容</p>
+                </div>
+            </label>
 
-        <!-- 選択肢 -->
-        <label class="menu-item">
-            <input type="radio" name="answer" value="1" required>
-            <img class="img" src="/img/es.svg" alt="選択肢1">
-            <div class="texts">
-                <p class="title">選択肢1</p>
-            </div>
-        </label>
-        <label class="menu-item">
-            <input type="radio" name="answer" value="2" required>
-            <img class="img" src="/img/es.svg" alt="選択肢2">
-            <div class="texts">
-                <p class="title">選択肢2</p>
-            </div>
-        </label>
-        <label class="menu-item">
-            <input type="radio" name="answer" value="3" required>
-            <img class="img" src="/img/es.svg" alt="選択肢3">
-            <div class="texts">
-                <p class="title">選択肢3</p>
-            </div>
-        </label>
-        <label class="menu-item">
-            <input type="radio" name="answer" value="4" required>
-            <img class="img" src="/img/es.svg" alt="選択肢4">
-            <div class="texts">
-                <p class="title">選択肢4</p>
-            </div>
-        </label>
-        <a href="/spi-main" class="menu-item">
-            <div class="texts">
-                <p class="center-texts">次の問題</p>
-            </div>
-        </a>
-    </section>
-</main>
+            <!-- 選択肢 -->
+            <label class="menu-item">
+                <input type="radio" name="answer" value="1" required>
+                <img class="img" src="/img/es.svg" alt="選択肢1">
+                <div class="texts">
+                    <p class="title">選択肢1</p>
+                </div>
+            </label>
+            <label class="menu-item">
+                <input type="radio" name="answer" value="2" required>
+                <img class="img" src="/img/es.svg" alt="選択肢2">
+                <div class="texts">
+                    <p class="title">選択肢2</p>
+                </div>
+            </label>
+            <label class="menu-item">
+                <input type="radio" name="answer" value="3" required>
+                <img class="img" src="/img/es.svg" alt="選択肢3">
+                <div class="texts">
+                    <p class="title">選択肢3</p>
+                </div>
+            </label>
+            <label class="menu-item">
+                <input type="radio" name="answer" value="4" required>
+                <img class="img" src="/img/es.svg" alt="選択肢4">
+                <div class="texts">
+                    <p class="title">選択肢4</p>
+                </div>
+            </label>
+            <a href="/spi-main" class="menu-item">
+                <div class="texts">
+                    <p class="center-texts">次の問題</p>
+                </div>
+            </a>
+        </section>
+    </main>
+<footer th:replace="common/footer :: siteFooter"></footer>
 </body>
 
-<footer>
-    <!-- フッター呼び出し -->
-    <div th:replace="common/footer :: siteFooter"></div>
-    Mirai by ぎじゅつりょくがすごい人たち
-</footer>
 </html>
