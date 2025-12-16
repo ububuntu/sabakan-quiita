@@ -62,3 +62,27 @@ CREATE TABLE cabgab_t(
     cabgab_correct_answer   CHAR(1) DEFAULT NULL ,
     cabgab_category         VARCHAR(50)
 );
+
+/* CAB/GAB回答率テーブル */
+CREATE TABLE cabgab_rate_t(
+    cabgab_rate_id  BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
+    cabgab_id       BIGINT NOT NULL ,
+    user_id         CHAR(20) NOT NULL ,
+    cabgab_answers  CHAR(3) NOT NULL ,
+    cabgab_count    INT NOT NULL ,
+    UNIQUE(cabgab_id, user_id) ,
+    FOREIGN KEY (cabgab_id) REFERENCES cabgab_t(cabgab_id),
+    FOREIGN KEY (user_id) REFERENCES user_m(user_id)
+);
+
+/* CAB/GAB結果テーブル */
+CREATE TABLE cabgab_result_t(
+    cabgab_result_id    BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
+    cabgab_id           BIGINT NOT NULL ,
+    user_id             CHAR(20) NOT NULL ,
+    cabgab_answer       CHAR(1) NOT NULL ,
+    cabgab_correct_answer   CHAR(1) NOT NULL ,
+    cabgab_answer_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+    FOREIGN KEY (cabgab_id) REFERENCES cabgab_t(cabgab_id),
+    FOREIGN KEY (user_id) REFERENCES user_m(user_id)
+);

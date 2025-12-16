@@ -4,24 +4,21 @@ import lombok.Data
 
 @Data
 class AnsweredCabGabData {
-    // 回答ID
-    var answerId: String? = null
+    // 回答結果ID
+    var cabgabResultId: String? = null
 
-    // セッションID
-    var sessionId: String? = null
-
-    // CAB/GAB受検ID
+    // CAB/GAB ID
     var cabGabId: String? = null
 
-    // ユーザID
+    // ユーザーID
     var userId: String? = null
 
-    // ユーザの回答
-    var userAnswer: Int? = null
+    // ユーザーの回答
+    var userAnswer: String? = null
 
-    // 正誤フラグ
-    var isCorrect: Boolean? = null
+    // 正解の回答
+    var correctAnswer: String? = null
 
     // 回答日時
-    var answeredAt: String? = null
+    var answerDate: String? = null
 }
