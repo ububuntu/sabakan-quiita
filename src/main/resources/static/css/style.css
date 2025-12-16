@@ -1,6 +1,7 @@
 :root {
     /* ====== 共通色設定 ====== */
     --primary: #2b73ff;
+    --question: #2B73FF0D;
     --bg: #f7f8fb;
     --text: #1f2a37;
     --muted: #6b7280;
@@ -145,6 +146,25 @@ main {
     width: 100%;
     justify-content: center;
     font-size: var(--font-lg);
+}
+
+
+/* ====== 適性試験 ====== */
+.choice-label {
+    align-items: center;
+}
+
+.choice-label:hover {
+    background: var(--question);
+}
+
+.choice-label input[type="radio"] {
+    display: none;
+}
+
+.choice-label input[type="radio"]:checked ~ .note {
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .menu-item .link {

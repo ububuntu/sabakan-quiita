@@ -7,54 +7,88 @@ import org.springframework.web.bind.annotation.PostMapping
 @Controller
     class QuestionsController {
 
-        @GetMapping("/questions-main")
-        fun getIndex(): String{
+        // 適性試験メイン画面
+        @GetMapping("/questions")
+        fun getQuestions(): String{
             return "questions/questions-main"
         }
 
-        @GetMapping("/spi-main")
-        fun getQuestion_spi_main(): String{
+        //　SPIメイン画面
+        @GetMapping("/spi")
+        fun getQuestionSpiMain(): String{
             return "questions/spi-main"
         }
 
-        @GetMapping("/spi-do")
-        fun getQuestion_spi_do(): String{
-            return "questions/spi-do"
+        // SPI問題画面
+        @GetMapping("/spi/study")
+        fun getQuestionSpiStudy(): String{
+            return "questions/spi-study"
         }
 
-        @GetMapping("/cabgab-main")
-        fun getQuestion_cubgab_main(): String{
+        // SPI結果画面
+        @GetMapping("/spi/result")
+        fun getQuestionSpiResult(): String{
+            return "questions/spi-result"
+        }
+
+        // CAB/GABメイン画面
+        @GetMapping("/cabgab")
+        fun getQuestionCabgabMain(): String{
             return "questions/cabgab-main"
         }
 
-        @GetMapping("/cabgab-do")
-        fun getQuestion_cubgab_do(): String{
-            return "questions/cabgab-do"
+        // CAB/GAB問題画面
+        @GetMapping("/cabgab/study")
+        fun getQuestionCabgabStudy(): String{
+            return "questions/cabgab-study"
         }
 
-        @PostMapping("/questions-main")
-        fun postIndex(): String{
+        // CAB/GAB結果画面
+        @GetMapping("/cabgab/result")
+        fun getQuestionCabgabResult(): String{
+            return "questions/cabgab-result"
+        }
+
+        // 適性試験メイン画面
+        @PostMapping("/questions")
+        fun postQuestions(): String{
             return "questions/questions-main"
         }
 
-        @PostMapping("/spi-main")
-        fun postQuestion_spi_main(): String{
+        // SPIメイン画面
+        @PostMapping("/spi")
+        fun postQuestionSpiMain(): String{
             return "questions/spi-main"
         }
 
-        @PostMapping("/spi-do")
-        fun postQuestion_spi_do(): String{
-            return "questions/spi-do"
+        // SPI問題画面
+        @PostMapping("/spi/study")
+        fun postQuestionSpiStudy(): String{
+            return "questions/spi-study"
         }
 
-        @PostMapping("/cabgab-main")
-        fun postQuestion_cabgab_main(): String{
+        // SPI結果画面
+        @PostMapping("/spi/result")
+        fun postQuestionSpiResult(): String{
+            return "questions/spi-result"
+        }
+
+        // CAB/GABメイン画面
+        @PostMapping("/cabgab")
+        fun postQuestionCabgabMain(): String{
             return "questions/cabgab-main"
         }
 
-        @PostMapping("/cabgab-do")
-        fun postQuestion_cabgab_do(): String{
-            return "questions/cabgab-do"
+        // CAB/GAB問題画面
+        @PostMapping("/cabgab/study")
+        fun postQuestionCabgabStudy(): String{
+            return "questions/cabgab-study"
+        }
+
+        //　CAB/GAB結果画面
+        @PostMapping("/cabgab/result")
+        fun postQuestionCabgabResult(): String{
+            return "questions/cabgab-result"
         }
 
     }

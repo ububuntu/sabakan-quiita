@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<header th:replace="common/header :: siteHeader"></header>
+<main>
+    <progress class="progress" max="100" value="70"></progress>
+    <form class="menu" action="/spi-submit" method="post">
+        <!-- 問題 -->
+        <div class="menu-item">
+            <p class="title">日本の首都</p>
+        </div>
+        <!-- 選択肢 -->
+        <label class="menu-item choice-label" for="1">
+            <img class="img" src="/img/es.svg" alt="aa">
+            <input type="radio" id="1" name="answer" value="1" required>
+            <span class="note">札幌</span>
+        </label>
+        <label class="menu-item choice-label" for="2">
+            <img class="img" src="/img/es.svg" alt="aa">
+            <input type="radio" id="2" name="answer" value="2">
+            <span class="note">大阪</span>
+        </label>
+        <label class="menu-item choice-label" for="3">
+            <img class="img" src="/img/es.svg" alt="aa">
+            <input type="radio" id="3" name="answer" value="3">
+            <span class="note">東京</span>
+        </label>
+        <label class="menu-item choice-label" for="4">
+            <img class="img" src="/img/es.svg" alt="aa">
+            <input type="radio" id="4" name="answer" value="4">
+            <span class="note">京都</span>
+        </label>
+        <!-- 次の問題 -->
+        <button class="button-center" type="submit">次の問題</button>
+    </form>
+</main>
+<footer th:replace="common/footer :: siteFooter"></footer>
+</body>
+</html>

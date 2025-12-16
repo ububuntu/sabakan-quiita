@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class LoginsController {
 
-    @GetMapping("/sign-in")
+    // ログイン画面
+    @GetMapping("/signin")
     fun signIn(model: Model): String {
         return "logins/sign-in"
     }
 
-    @GetMapping("/sign-up")
+    // 新規登録画面
+    @GetMapping("/signup")
     fun signUp(model: Model): String {
         return "logins/sign-up"
     }

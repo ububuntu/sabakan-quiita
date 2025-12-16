@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
-    <script th:src="@{/js/script.js}"></script>
 </head>
 
 <body>
 <header th:replace="common/header :: siteHeader"></header>
     <main>
         <section class="menu" aria-label="CAB・GABメイン">
-            <a href="cabgab-do" class="menu-item">
+            <a href="cabgab/study" class="menu-item">
                 <div class="texts">
                     <p class="title">問題1</p>
                 </div>
@@ -20,10 +19,4 @@
     </main>
 <footer th:replace="common/footer :: siteFooter"></footer>
 </body>
-
-<footer>
-    <!-- フッター呼び出し -->
-    <div th:replace="common/footer :: siteFooter"></div>
-    Mirai by ぎじゅつりょくがすごい人たち
-</footer>
 </html>
