@@ -18,31 +18,3 @@ INSERT INTO es_t (
 ) VALUES (
     'E001', 'U001', '志望動機の例', '自己PRの例', '学生時代の活動例', 'ストレス耐性の例', 'エンジニア', CURRENT_DATE
 );
-
--- SPIテーブル
-INSERT INTO spi_t (
-    spi_id, spi_content, spi_answer1, spi_answer2, spi_answer3, spi_answer4, spi_correct_answer, spi_category
-) VALUES (
-    'S001', '1+1は？', '1', '2', '3', '4', 2, '計算'
-);
-
--- SPI結果テーブル
-INSERT INTO spi_result_t (
-    spi_result_id, user_id, spi_id, spi_user_answer, spi_is_correct, spi_answered_at
-) VALUES (
-    'SR001', 'U001', 'S001', 2, TRUE, CURRENT_TIMESTAMP
-);
-
--- CAB/GABテーブル
-INSERT INTO cabgab_t (
-    cabgab_id, cabgab_content, cabgab_answer1, cabgab_answer2, cabgab_answer3, cabgab_answer4, cabgab_correct_answer, cabgab_category
-) VALUES (
-    'C001', '図形の回転問題', 'A', 'B', 'C', 'D', 3, '空間把握'
-);
-
--- CAB/GAB結果テーブル
-INSERT INTO cabgab_result_t (
-    cabgab_result_id, user_id, cabgab_id, cabgab_user_answer, cabgab_is_correct, cabgab_answered_at
-) VALUES (
-    'CR001', 'U001', 'C001', 3, TRUE, CURRENT_TIMESTAMP
-);
