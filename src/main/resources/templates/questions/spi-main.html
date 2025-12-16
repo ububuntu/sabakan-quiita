@@ -7,12 +7,9 @@
     <script th:src="@{/js/script.js}"></script>
 </head>
 
-<header>
-    <!-- ヘッダー呼び出し -->
-    <div th:replace="common/header :: siteHeader"></div>
-</header>
-
 <body>
+<header th:replace="common/header :: siteHeader"></header>
+
     <main>
         <section class="menu" aria-label="SPIメイン">
             <a href="/spi-do" class="menu-item">
@@ -22,11 +19,7 @@
             </a>
         </section>
     </main>
+<footer th:replace="common/footer :: siteFooter"></footer>
 </body>
 
-<footer>
-    <!-- フッター呼び出し -->
-    <div th:replace="common/footer :: siteFooter"></div>
-    Mirai by ぎじゅつりょくがすごい人たち
-</footer>
 </html>

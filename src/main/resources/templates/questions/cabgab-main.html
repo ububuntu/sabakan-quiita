@@ -7,21 +7,18 @@
     <script th:src="@{/js/script.js}"></script>
 </head>
 
-<header>
-    <!-- ヘッダー呼び出し -->
-    <div th:replace="common/header :: siteHeader"></div>
-</header>
-
 <body>
-<main>
-    <section class="menu" aria-label="CAB・GABメイン">
-        <a href="cabgab-do" class="menu-item">
-            <div class="texts">
-                <p class="title">問題1</p>
-            </div>
-        </a>
-    </section>
-</main>
+<header th:replace="common/header :: siteHeader"></header>
+    <main>
+        <section class="menu" aria-label="CAB・GABメイン">
+            <a href="cabgab-do" class="menu-item">
+                <div class="texts">
+                    <p class="title">問題1</p>
+                </div>
+            </a>
+        </section>
+    </main>
+<footer th:replace="common/footer :: siteFooter"></footer>
 </body>
 
 <footer>

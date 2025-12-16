@@ -8,30 +8,30 @@
 </head>
 <body>
 <header th:replace="common/header :: siteHeader"></header>
-<main>
-    <section class="menu" aria-label="カメラ表示">
-        <!-- カメラ表示領域 -->
-        <a class="camera-preview">
-            <video id="input_video" autoplay playsinline></video>
-        </a>
+    <main>
+        <section class="menu" aria-label="カメラ表示">
+            <!-- カメラ表示領域 -->
+            <a class="camera-preview">
+                <video id="input_video" autoplay playsinline></video>
+            </a>
 
-        <!-- 進捗度 -->
-        <!-- valueに値を挿入します -->
-        <progress class="progress" max="100" value="70"></progress>
+            <!-- 進捗度 -->
+            <!-- valueに値を挿入します -->
+            <progress class="progress" max="100" value="70"></progress>
 
-        <!-- 質問テキストボックス -->
-        <a class="menu-item">
-            <div class="texts">
-                <p class="center-texts"></p>
-            </div>
-        </a>
+            <!-- 質問テキストボックス -->
+            <a class="menu-item">
+                <div class="texts">
+                    <p class="center-texts"></p>
+                </div>
+            </a>
 
-        <!-- 面接終了ボタン -->
-        <button class="button-center" onclick="location.href='./interview-result'" type="button">
-            面接停止
-        </button>
-    </section>
-</main>
+            <!-- 面接終了ボタン -->
+            <button class="button-center" onclick="location.href='./interview-result'" type="button">
+                面接停止
+            </button>
+        </section>
+    </main>
 <footer th:replace="common/footer :: siteFooter"></footer>
 </body>
 </html>
