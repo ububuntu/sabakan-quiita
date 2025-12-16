@@ -73,7 +73,7 @@ class CabGabService {
         // 登録結果を確認
         if (update == 0) {
             return CabGabResponse().apply {
-                message = "Failed to record Cab/Gab answer."
+                message = null
             }
         }
 
@@ -85,16 +85,16 @@ class CabGabService {
             val rateInsertCount  = cabGabRepository.insertCabGabAnswerRate(data)
 
             if (rateInsertCount == 0) {
-                throw Exception("Failed to insert Cab/Gab answer.")
+                throw RuntimeException("Failed to insert Cab/Gab answer.")
             }
         } else if (rateUpdate > 1) {
             // 多分ありえないエラー
-            throw RuntimeException("Failed to update Cab/Gab answer.")
+            throw IllegalStateException("Failed to update Cab/Gab answer.")
         }
 
         //結果を返す
         return CabGabResponse().apply {
-            message = "OK"
+            message = null
         }
     }
 
