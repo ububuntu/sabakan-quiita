@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 
+
 @Controller
 class ErrorController {
 
@@ -15,13 +16,13 @@ class ErrorController {
     }
 
     // 404エラー画面
-    @GetMapping("/404error")
+    @GetMapping("/error/404")
     fun get404Error(): String {
         return "error/404-error"
     }
 
     // 500エラー画面
-    @GetMapping("/500error")
+    @GetMapping("/error/500")
     fun get500Error(): String {
         return "error/500-error"
     }
@@ -33,13 +34,13 @@ class ErrorController {
     }
 
     // 404エラー画面
-    @PostMapping("/404error")
+    @PostMapping("/error/404")
     fun post404Error(): String {
         return "error/404-error"
     }
 
     // 500エラー画面
-    @PostMapping("/500error")
+    @PostMapping("/error/500")
     fun post500Error(): String {
         return "error/500-error"
     }
