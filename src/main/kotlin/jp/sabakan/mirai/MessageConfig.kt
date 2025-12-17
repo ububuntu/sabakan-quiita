@@ -50,31 +50,29 @@ public class MessageConfig {
         // M203: 面接履歴の登録に失敗しました
         const val INTERVIEW_INSERT_FAILED = "面接履歴の登録に失敗しました"
 
-        // M301-1: SPI問題の登録に成功しました
+        // M301: SPI問題の登録に成功しました
         const val SPI_INSERT_SUCCESS = "SPI問題の登録に成功しました"
 
-        // M302-1: SPI問題の登録に失敗しました
+        // M302: SPI問題の登録に失敗しました
         const val SPI_INSERT_FAILED = "SPI問題の登録に失敗しました"
 
-        // M303-1: SPI問題の削除に成功しました
+        // M303: SPI問題の削除に成功しました
         const val SPI_DELETE_SUCCESS = "SPI問題の削除に成功しました"
 
-        // M304-1: SPI問題の削除に失敗しました
+        // M304: SPI問題の削除に失敗しました
         const val SPI_DELETE_FAILED = "SPI問題の削除に失敗しました"
 
-        // M301-2: Cab/Gab問題の登録に成功しました
+        // M305: Cab/Gab問題の登録に成功しました
         const val CABGAB_INSERT_SUCCESS = "Cab/Gab問題の登録に成功しました"
 
-        // M302-2: Cab/Gab問題の登録に失敗しました
+        // M306: Cab/Gab問題の登録に失敗しました
         const val CABGAB_INSERT_FAILED = "Cab/Gab問題の登録に失敗しました"
 
-        // M303-2: Cab/Gab問題の削除に成功しました
+        // M307: Cab/Gab問題の削除に成功しました
         const val CABGAB_DELETE_SUCCESS = "Cab/Gab問題の削除に成功しました"
 
-        // M304-2: Cab/Gab問題の削除に失敗しました
+        // M308: Cab/Gab問題の削除に失敗しました
         const val CABGAB_DELETE_FAILED = "Cab/Gab問題の削除に失敗しました"
-
-
     }
 }
 
