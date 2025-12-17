@@ -1,0 +1,36 @@
+
+package jp.sabakan.mirai.controller
+
+import jakarta.servlet.http.HttpServletRequest
+import org.springframework.boot.webmvc.error.ErrorController
+import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.RequestMapping
+
+@Controller
+@RequestMapping("/error")
+class CustomErrorController: ErrorController {
+
+    private val STATUS_CODE = "jakarta.servlet.error.status_code"
+
+    @RequestMapping()
+    fun error(request: HttpServletRequest): String{
+        // HTTPステータスコードを取得
+        val status = request.getAttribute(STATUS_CODE)?.toString()?.toIntOrNull()
+
+        // 各種エラーステータスコードに応じたビューを返す
+        if (status != null) {
+            when{
+                // 400番台のエラー
+                status in 400..499 -> {
+                    return "error/400"
+            }
+                // 500番台のエラー
+                status in 500..599 -> {
+                    return "error/500"
+                }
+            }
+        }
+        // その他のエラー
+        return "error"
+    }
+}
