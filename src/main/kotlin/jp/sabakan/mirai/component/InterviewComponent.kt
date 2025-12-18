@@ -12,6 +12,9 @@ class InterviewComponent(
 ) {
     private val url = "http://192.168.1.100:5000"
 
+    /**
+     * 例外発生時にデフォルト値を返す安全な呼び出し
+     */
     private inline fun <T> safeCall(default: T, block: () -> T): T {
         return try {
             block()
