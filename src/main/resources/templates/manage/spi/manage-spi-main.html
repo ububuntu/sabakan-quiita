@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ユーザ管理メイン画面</title>
     <link rel="stylesheet" th:href="@{/css/administrator.css}" />
 </head>
 <body>
-<section class="menu" aria-label="管理者メニュー">
-    <div onclick="location.href='./spi/edit'" class="menu-item">
-        <div class="texts">
-            <p class="title">SPI問題変更</p>
-            <p class="desc">画面確認のための簡易ボタン</p>
-        </div>
-    </div>
+<header th:replace="common/header :: siteHeader('manageHeader')"></header>
+<main>
+    <!-- SPIメイン画面 -->
+    <p class="note">SPI問題管理</p>
+    <section class="menu" aria-label="SPI問題リスト">
+        <div class="sort">
+            <div class="form-row">
+                <label class="form-label" for="user-name">ユーザ名で絞り込む</label>
+                <input type="text" id="user-name" name="userName" placeholder="ユーザ名を入力">
+            </div>
+            <div class="radio">
+                <!-- ラジオボタンのcssがボタン選択によって変化する事を確かめるために仮でnameやidをつけています -->
+                <input type="radio" name="status" id="all" checked>
+                <label for="all">すべて</label>
 
-    <div onclick="location.href='./spi/add'" class="menu-item">
-        <div class="texts">
-            <p class="title">SPI問題追加</p>
-            <p class="desc">画面確認のための簡易ボタン</p>
-        </div>
-    </div>
+                <input type="radio" name="status" id="active">
+                <label for="active">利用中</label>
 
-    <div class="menu-item">
-        <div class="texts">
-            <p class="title">この画面は未完成です</p>
+                <input type="radio" name="status" id="stop">
+                <label for="stop">停止中</label>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="menu-item">
-        <div class="texts">
-            <p class="title">この画面は未完成です</p>
+    <section class="menu" aria-label="SPI問題管理">
+        <div class="menu-item" onclick="location.href='./spi/edit'">
+            <div class="texts">
+                <p class="title">言語</p>
+                <p class="note">「鳥：飛ぶ」と同じ関係にあるものを、次の選択肢から選びなさい。</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="menu-item">
-        <div class="texts">
-            <p class="title">この画面は未完成です</p>
-        </div>
-    </div>
-</section>
+
+
+
+    <div class="spacer" aria-hidden="true"></div>
+</main>
+<footer th:replace="common/footer :: siteFooter"></footer>
+<button onclick="location.href='./spi/add'" class="fab-register">新規登録 ＋</button>
 </body>
 </html>
