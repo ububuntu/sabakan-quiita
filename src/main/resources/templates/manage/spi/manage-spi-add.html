@@ -2,14 +2,14 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>管理者画面 | Mirai</title>
+    <title>SPI問題新規作成 | Mirai</title>
     <link rel="stylesheet" th:href="@{/css/administrator.css}" />
 </head>
 <body>
 <header th:replace="common/header :: siteHeader('manageHeader')"></header>
 <main>
     <!-- システム統計 -->
-    <p class="note">SPI新規作成</p>
+    <p class="note">SPI問題新規作成</p>
     <section class="statistics" aria-label="システム統計">
         <div class="form-row">
             <label class="form-label" for="spi_content">問題文</label>
@@ -49,10 +49,8 @@
         <div class="form-row">
             <label class="form-label" for="spi_category">分野</label>
             <select id="spi_category" name="spiCorrectCategory">
-                <option>力</option>
-                <option>テ</option>
-                <option>ゴ</option>
-                <option>リ</option>
+                <option>言語</option>
+                <option>非言語</option>
             </select>
         </div>
 

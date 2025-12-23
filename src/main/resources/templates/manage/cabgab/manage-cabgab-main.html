@@ -2,9 +2,67 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CAB/GAB問題管理 | Mirai</title>
+    <link rel="stylesheet" th:href="@{/css/administrator.css}" />
 </head>
 <body>
+<header th:replace="common/header :: siteHeader('manageHeader')"></header>
+<main>
+    <!-- CAB/GABメイン画面 -->
+    <section class="menu" aria-label="CAB/GAB問題リスト">
+        <p class="note">CAB/GAB問題管理</p>
+        <div class="sort">
+            <div class="radio">
+                <!-- ラジオボタンのcssがボタン選択によって変化する事を確かめるために仮でnameやidをつけています -->
+                <input type="radio" name="status" id="all" checked>
+                <label for="all">すべて</label>
 
+                <input type="radio" name="status" id="active">
+                <label for="active">言語</label>
+
+                <input type="radio" name="status" id="stop">
+                <label for="stop">非言語</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" aria-label="CAB/GAB問題管理">
+        <div class="statistics box" onclick="location.href='./cabgab/edit'">
+            <label class="category">非言語</label>
+            <p class="note">例題) 6250÷325を計算しなさい</p>
+            <div class="menu-item">
+                <img class="img" src="/img/question.svg" alt="SPI問題管理">
+                <div class="texts">
+                    <p class="title">19.23</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img class="img" src="/img/question.svg" alt="SPI問題管理">
+                <div class="texts">
+                    <p class="title">18.43</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img class="img" src="/img/question.svg" alt="SPI問題管理">
+                <div class="texts">
+                    <p class="title">21.93</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img class="img" src="/img/question.svg" alt="SPI問題管理">
+                <div class="texts">
+                    <p class="title">18.93</p>
+                </div>
+            </div>
+            <div class="meta">
+                <p class="note">解答：A</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer" aria-hidden="true"></div>
+</main>
+<footer th:replace="common/footer :: siteFooter"></footer>
+<button onclick="location.href='./cabgab/add'" class="fab-register">新規登録 ＋</button>
 </body>
 </html>
